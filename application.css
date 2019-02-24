@@ -256,6 +256,11 @@ code {
     margin-right: 2px;
   }
 
+  .dotMobileFix {
+    width: 100vw !important;
+    margin-right: 2px;
+  }
+
   .mv1 {
     transform: translateX(10%);
     transform-origin: center;
