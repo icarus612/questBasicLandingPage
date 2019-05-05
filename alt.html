@@ -9,8 +9,8 @@
 		<link href="https://fonts.googleapis.com/css?family=Inconsolata|Indie+Flower|Open+Sans|Quicksand" rel="stylesheet">
 	</head>
 	<body>
-		<article role="main">
-			<div class="bg-landing overflow-hidden">
+		<article id="main">
+			<div class="color-change-bg overflow-hidden pb-5">
 				<div class="parallaxWrapper container">
 					<div class="row align-items-center">
 
@@ -120,20 +120,21 @@
 
 
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-			<script src="assets/js/parallax.js"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 			<script src="assets/anime/lib/anime.min.js"></script>
 			<script src="assets/js/dots.js"></script>
 			<script src="assets/js/scrollBG.js"></script>
 			<script defer>
 				let howFar = () => {
-					return screen.width > 500 ? (320) : (250);
-				}
-				let dotsRTL = makeSVG("quest1", 6, "dot", ["dot-c1", "dot-c2"], "100%", 360, ".mv1");
-				let dotsLTR = makeSVG("quest2", 6, "dot", ["dot-c1", "dot-c2"], "100%", 360, ".mv2");
-				let dotsLTR2 = makeSVG("quest3", 6, "dot", ["dot-c1", "dot-c2"], "100%", 360, ".mv3");
-				dotsMovement(dotsRTL, [40, 360], [10, 360], 1000, "cubicX", "#F30659");
-				dotsMovement([dotsLTR, dotsLTR2], [360, 40], [10, 360], 1000, "cubicX", "#F30659");
+					let howFar = () => {
+						return screen.width > 500 ? (320) : (250);
+					}
+					let dotsRTL = makeSVG("quest1", 6, "dot", ["dot-c1", "dot-c2"], "100%", 360, ".mv1");
+					let dotsLTR = makeSVG("quest2", 6, "dot", ["dot-c1", "dot-c2"], "100%", 360, ".mv2");
+					let dotsLTR2 = makeSVG("quest3", 6, "dot", ["dot-c1", "dot-c2"], "100%", 360, ".mv3");
+					dotsMovement(dotsRTL, [40, 360], [10, 360], 1000, "cubicX", "#F30659");
+					dotsMovement(dotsLTR, [360, 40], [10, 360], 1000, "cubicX", "#F30659");
+					dotsMovement(dotsLTR2, [560, 200], [10, 360], 1000, "cubicX", "#F30659");
 			</script>
 		</article>
 	</body>
