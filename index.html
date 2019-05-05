@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Quest</title>
-		<link rel="stylesheet" href="./application.css">
+		<link rel="stylesheet" href="assets/css/application.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Inconsolata|Indie+Flower|Open+Sans|Quicksand" rel="stylesheet">
@@ -32,7 +32,7 @@
 						</div>
 
 						<div class="col-10">
-							<div class="dotsPulseWhiteR2 mv1 dotMobileFix"></div>
+							<div class="mv3"></div>
 						</div>
 
 						<div class="col-xs-12 col-lg-6">
@@ -55,7 +55,7 @@
 						</div>
 
 						<div class="col-10">
-							<div class="dotsPulseWhite2 mv1 dotMobileFix"></div>
+							<div class="mv1"></div>
 						</div>
 
 						<div class="d-none d-md-block col-md-4">
@@ -78,7 +78,7 @@
 						</div>
 
 						<div class="col-10 col-md-8">
-							<div class="dotsPulseWhiteR2 mv2 dotMobileFix"></div>
+							<div class="mv2"></div>
 						</div>
 
 						<div class="col-xs-12 col-md-8 col-lg-6">
@@ -120,9 +120,20 @@
 
 
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-			<script src="parallax.js"></script>
+			<script src="assets/js/parallax.js"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+			<script src="assets/anime/lib/anime.min.js"></script>
+			<script src="assets/js/dots.js"></script>
+			<script defer>
+				let howFar = () => {
+					return screen.width > 500 ? (320) : (250);
+				}
+				let dotsRTL = makeSVG("quest1", 6, "dot", ["dot-c1", "dot-c2"], "100%", 360, ".mv1");
+				let dotsLTR = makeSVG("quest2", 6, "dot", ["dot-c1", "dot-c2"], "100%", 360, ".mv2");
+				let dotsLTR2 = makeSVG("quest3", 6, "dot", ["dot-c1", "dot-c2"], "100%", 360, ".mv3");
+				dotsMovement(dotsRTL, [40, 360], [10, 360], 1000, "cubicX", "#F30659");
+				dotsMovement([dotsLTR, dotsLTR2], [360, 40], [10, 360], 1000, "cubicX", "#F30659");
+			</script>
 		</article>
 	</body>
 
