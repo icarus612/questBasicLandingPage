@@ -26,17 +26,13 @@ let animateBG = (el, c1, c2) => {
 scrollBG[scrollBG.length] = animateBG(".color-change-bg", "#134a89", "#1ea185")
 scrollBG[scrollBG.length] = animateBG(".color-change-bg", "#1ea185", "#9bbb5c")
 scrollBG[scrollBG.length] = animateBG(".color-change-bg", "#9bbb5c", "#e3f226")
-scrollBG[scrollBG.length] = animateBG(".color-change-bg", "#e3f226", "#f29b26")
-scrollBG[scrollBG.length] = animateBG(".color-change-bg", "#f29b26", "#bd392f")
-scrollBG[scrollBG.length] = animateBG(".color-change-bg", "#bd392f", "#f15b6d")
-scrollBG[scrollBG.length] = animateBG(".color-change-bg", "#f15b6d", "#9b26f2")
-scrollBG[scrollBG.length] = animateBG(".color-change-bg", "#9b26f2", "#3fa3db")
 scrollBG[scrollBG.length] = animateBG(".color-change-bg", "#3fa3db", "#134a89")
+scrollBG[scrollBG.length] = animateBG(".color-change-bg", "#134a89", "#134a89")
 
 
-let startColor = document.getElementById("main");
-let fullHeight = Math.floor(document.getElementById("main").clientHeight/5);
-startColor.style.backgroundColor = "#004589";
+let startColor = document.querySelector(".color-change-bg");
+let fullHeight = Math.floor(document.getElementById("main").clientHeight);
+startColor.style.backgroundColor = "#134a89";
 window.onscroll = () => {
     let x = Math.floor(scrollBG[scrollBG.length-1].currentTime/time)
     let y = Math.floor(scrollBG[scrollBG.length-1].currentTime)
@@ -45,7 +41,5 @@ window.onscroll = () => {
         scrollBG[i].seek((window.scrollY / (time * 9)) * scrollBG[i].duration);
     }
     scrollBG[x].seek((window.scrollY / (time * 9)) * scrollBG[scrollBG.length-1].duration);
-
-    y < 20 ? startColor.style.backgroundColor = "#004589" : console.log(y)
 
 };
