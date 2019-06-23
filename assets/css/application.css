@@ -12,25 +12,44 @@ code {
   padding: 10px;
   margin: auto;
   color: white !important;
-  border: 1px solid 
 }
 .white {
   color: rgba(255, 255, 255, 1.5) !important;
 }
-
-.btn-Purple{
-  background-color: #D8BFD8;
+.dark {
+  color: rgba(55, 55, 55, 1) !important;
+}
+.btn-purple{
+  background-color: #BA55D3;
   border-color: #BA55D3;
   border-radius: 8px;
   margin: 3px;
   box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 }
-.btn-Purple:hover{
+.btn-purple:hover{
+  background-color: #BA55D3;
   transition: .5s transform;
   transform: translateY(-5px);
   box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.52), 0 4px 25px 0px rgba(0, 0, 0, 0.18), 0 8px 10px -5px rgba(0, 0, 0, 0.25);
   color: white !important;
-  border-color: white !important;
+  border-color: transparent !important;
+}
+
+.btn-purple-basic{
+  background-color: transparent;
+  border-color: #fff;
+  color: #fafafa;
+  border-radius: 8px;
+  margin: 3px;
+}
+
+.btn-purple-basic:hover{
+  background-color: #fff;
+  transition: .5s transform;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  color: #BA55D3 !important;
+  border-color: #BA55D3 !important;
 }
 .purple-gradient {
   padding: 5px;
