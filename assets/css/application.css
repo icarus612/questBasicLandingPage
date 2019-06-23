@@ -12,6 +12,7 @@ code {
   padding: 10px;
   margin: auto;
   color: white !important;
+  border: 1px solid 
 }
 .white {
   color: rgba(255, 255, 255, 1.5) !important;
@@ -37,15 +38,12 @@ code {
   border-radius: 8px;
   background-image: linear-gradient(to bottom right, rgba(175, 70, 211, .7), rgba(147, 112, 219, .7)) !important;
 }
-
-.mv1 {
-    transform: translateX(30%);
-    transform-origin: center;
-}
-
-.mv2 {
-    transform: translateX(40%);
-    transform-origin: center;
+#mv1, #mv2, #mv3 {
+  width: 100%;
+  height: 360px;
+  margin: -10px 0;
+  z-index: 200;
+  position: relative;
 }
 
 .parallaxHeader {
@@ -56,21 +54,58 @@ code {
   color: white;
 }
 
-.softDark{
-  color: rgb(105,105,105);
-}
-
-.dark{
-  color: rgb(90,90,90) !important;
-}
 
 #parallaxHeader {
   margin-top: 23% !important;
 }
 
-.dot > circle {
-  fill: rgba(0,0,0,0);
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  z-index: 200;
+  left: 0;
 }
+.throbber-top {
+  top: 7px;
+  left: 50%;
+  position: relative;
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: #02A9F7;
+  border-radius: 100%;
+  box-shadow: 0 0 0 2px #02A9F7;
+  z-index: 3000;
+}
+.throbber-bottom {
+  bottom: 7px;
+  left: 50%;
+  position: relative;
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: #02A9F7;
+  border-radius: 100%;
+  box-shadow: 0 0 0 2px #02A9F7;
+  z-index: 3000;
+}
+.throbber-inner {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  margin: -13px 0 0 -13px;
+  width: 26px;
+  height: 26px;
+  border: 1px solid hsla(0%,0%,0%,.1);
+  background: hsla(60%,0%,40%,.4);
+  border-radius: 100%;
+  box-shadow: 0 0 0 2px #02A9F7;
+  }
 
 #contactMe{
   height: 500px;

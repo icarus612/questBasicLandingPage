@@ -21,8 +21,7 @@ const addArrClass = (e, c) => { //e is element and c is classes to add
           let circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
           dot.push(circle);
           dot[i].className += classElement[i % classElement.length];
-          dot[i].setAttributeNS(null, 'cy', -5);
-          dot[i].setAttributeNS(null, 'cx', w - 15);
+         
           dot[i].setAttributeNS(null, 'r', 5);
           svg.appendChild(dot[i]);
           dot[i].className +=  ` dot dotNo${i}`;
@@ -251,14 +250,21 @@ const addArrClass = (e, c) => { //e is element and c is classes to add
   }
   
   let animation = (e, t, svg, mvX, mvY, crv, clr, d) => {
-
+      let howFar = (s,e,vw) => {
+        let start = document.getElementById(s).getBoundingClientRect()
+        let end = document.getElementById(e).getBoundingClientRect()
+        let x = [(start.left+start.right)/2 - vw, (end.left+end.right)/2 -vw];
+        return x
+      }
+      let vw = document.getElementById("container").getBoundingClientRect().left + 20
       let animate = anime.timeline({
   
       }).add({
-          targets: svg.children[e],
-          translateX: translateX(mvX, t, crv),
+          targets: svg.children[e],         
+          translateX: translateX(howFar(mvX[0], mvX[1], vw), t, crv),
           translateY: translateY(mvY, t, crv),
           fill: fillColor(clr, t, svg),
+          backgroundColor: fillColor(clr, t, svg),
           complete: function(anim){
             animation(e, t, svg, mvX, mvY, crv, clr, 0)
           },
@@ -270,20 +276,12 @@ const addArrClass = (e, c) => { //e is element and c is classes to add
   
   let dotsMovement = (svg, mvX, mvY, t, crv, clr) => {
     let delay = (el,time, n) =>{
-      return 3.5 * time / el.childNodes.length * n
+      return 3.5 * time / el.children.length * n
     }
     //mobile functions for distance
     let loopThrough = (e) => {
-      for (i = 0; i < e.childNodes.length; i++){
-        let strtclr = e.childNodes[i].style.fill;
-        console.log(strtclr)
-        let color;
-        if (typeof clr == "string")  {
-            color = [strtclr, clr]
-        } else {
-            color = clr
-        } 
-        animation(i, t, e, mvX, mvY, crv, color, delay(e, t,i))
+      for (i = 0; i < e.children.length; i++){
+        animation(i, t, e, mvX, mvY, crv, clr, delay(e, t, i))
       }
     }
     if (typeof svg.length == 'undefined') {
