@@ -134,19 +134,12 @@ code {
   background-position: top;
 }
 @media (max-width: 576px) { 
-  .throbber-top:nth-child(even) {
+  .right-m {
     left: 80%;
   }
-  .throbber-top:nth-child(odd) {
+  .left-m {
     left: 20%;
   }
-  .throbber-bottom:nth-child(even) {
-    left: 20%;
-  }
-  .throbber-bottom:nth-child(odd) {
-    left: 80%;
-  }
-
   
 
 }
