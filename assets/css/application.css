@@ -133,3 +133,20 @@ code {
   background-size: 500px;
   background-position: top;
 }
+@media (max-width: 576px) { 
+  .throbber-top:nth-child(even) {
+    left: 80%;
+  }
+  .throbber-top:nth-child(odd) {
+    left: 20%;
+  }
+  .throbber-bottom:nth-child(even) {
+    left: 20%;
+  }
+  .throbber-bottom:nth-child(odd) {
+    left: 80%;
+  }
+
+  
+
+}
