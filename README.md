@@ -7,5 +7,6 @@ Feel free to use it and change it how you like - Quest operates under MIT licenc
 ##### https://github.com/icarus612/dots
 
 For other fun projects check out https://daedalus.devicarus.com
+For web development help visit: https://devicarus.com
 
 
